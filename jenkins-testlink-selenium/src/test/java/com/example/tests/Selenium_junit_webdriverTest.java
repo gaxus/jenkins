@@ -37,7 +37,7 @@ public class Selenium_junit_webdriverTest{
 	//	driver.findElement(By.cssSelector("a.subMenuBtn > span")).click();
 //		driver.findElement(By.cssSelector("li.item-173 > a > span")).click();
 	//	driver.findElement(By.linkText("Starter Pack")).click();
-		driver.findElement(By.cssSelector("li.item-182 > a.subMenuBtn > span")).click();
+	//	driver.findElement(By.cssSelector("li.item-182 > a.subMenuBtn > span")).click();
 		// Warning: assertTextPresent may require manual changes
 		assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*$"));
 	}
