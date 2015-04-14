@@ -18,16 +18,20 @@ public class Selenium_junit4_remote_controlTest {
 
 	@Test
 	public void testSelenium_junit4_remote_control() throws Exception {
-		selenium.open("/index.php/fr/");
-		selenium.click("css=a.subMenuBtn > span");
-		selenium.waitForPageToLoad("30000");
-		selenium.click("css=li.item-173 > a > span");
-		selenium.waitForPageToLoad("30000");
-		assertTrue(selenium.isTextPresent(""));
-		selenium.click("css=li.item-176 > a.subMenuBtn > span");
-		selenium.waitForPageToLoad("30000");
-		selenium.click("css=li.item-181.first > a.subMenuBtn > span");
-		selenium.waitForPageToLoad("30000");
+		try{
+			selenium.open("/index.php/fr/");
+			selenium.click("css=a.subMenuBtn > span");
+			selenium.waitForPageToLoad("30000");
+			selenium.click("css=li.item-173 > a > span");
+			selenium.waitForPageToLoad("30000");
+			assertTrue(selenium.isTextPresent("qzfjzejfzhefzhfeh"));
+			selenium.click("css=li.item-176 > a.subMenuBtn > span");
+			selenium.waitForPageToLoad("30000");
+			selenium.click("css=li.item-181.first > a.subMenuBtn > span");
+			selenium.waitForPageToLoad("30000");
+		} catch(Exception e){
+			selenium.captureScreenshot(System.getProperty("user.dir")+"/jenkins-testlink-selenium/target/test-attachments/screenshot.png");
+		}
 	}
 
 	@After
