@@ -30,7 +30,7 @@ public class Selenium_junit4_remote_controlTest {
 			selenium.click("css=li.item-181.first > a.subMenuBtn > span");
 			selenium.waitForPageToLoad("30000");
 		} catch(Exception e){
-			selenium.captureScreenshot(System.getProperty("user.dir")+"/jenkins-testlink-selenium/target/test-attachments/screenshot.png");
+			selenium.captureScreenshot(System.getProperty("user.dir")+"/jenkins-testlink-selenium/target/screenshot.png");
 		}
 	}
 
