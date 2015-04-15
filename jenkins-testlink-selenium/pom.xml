@@ -28,12 +28,6 @@
 	</build>
 	<dependencies>
 		<dependency>
-			<groupId>com.safaribooks</groupId>
-			<artifactId>jenkins-helper-java</artifactId>
-			<version>1.0.0</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
