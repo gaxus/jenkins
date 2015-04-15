@@ -41,7 +41,7 @@ public class Selenium_junit4_remote_controlTest {
 	}
 
 	/**
-	 * Suite de tests.
+	 * Suite de test.
 	 * @throws Exception
 	 */
 	@Test
@@ -60,6 +60,7 @@ public class Selenium_junit4_remote_controlTest {
 
 	/**
 	 * Fermeture de la fenêtre du navigateur.
+	 * AfterClass parce que sinon impossible de faire de screenshot si le selenium est fermé avant.
 	 * @throws Exception
 	 */
 	@AfterClass
