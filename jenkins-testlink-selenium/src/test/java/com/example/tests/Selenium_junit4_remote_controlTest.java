@@ -51,7 +51,7 @@ public class Selenium_junit4_remote_controlTest {
 		selenium.waitForPageToLoad("30000");
 		selenium.click("css=li.item-173 > a > span");
 		selenium.waitForPageToLoad("30000");
-		//assertTrue(selenium.isTextPresent("qzfjzejfzhefzhfeh"));
+		assertTrue(selenium.isTextPresent("qzfjzejfzhefzhfeh"));
 		selenium.click("css=li.item-176 > a.subMenuBtn > span");
 		selenium.waitForPageToLoad("30000");
 		selenium.click("css=li.item-181.first > a.subMenuBtn > span");

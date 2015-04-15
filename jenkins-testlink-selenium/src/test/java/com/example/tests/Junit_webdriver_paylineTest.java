@@ -82,7 +82,7 @@ public class Junit_webdriver_paylineTest {
 		webdriver.findElement(By.cssSelector("li.item-170 > a.subMenuBtn > span")).click();
 		webdriver.findElement(By.cssSelector("li.item-173 > a > span")).click();
 		//The next one fails.
-		//webdriver.findElement(By.cssSelector("li.item-183 > a.subMenuBtn > span")).click();
+		webdriver.findElement(By.cssSelector("li.item-183 > a.subMenuBtn > span")).click();
 	}
 
 	/**
