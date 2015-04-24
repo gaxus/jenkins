@@ -20,7 +20,7 @@ public class SoapuiJunitTest {
 	{
 		//WsdlProject project = new WsdlProject("src/test/resources/Jenkins-soapui-project.xml");
 		ProxySelector proxy = ProxySelector.getDefault();
-		WsdlProject project = new WsdlProject("src/test/resources/project-t02-groovy.xml");
+		WsdlProject project = new WsdlProject(System.getProperty("user.dir")+"/src/test/resources/project-t02-groovy.xml");
 		ProxySelector.setDefault(proxy);
 		List<TestSuite> testSuites = project.getTestSuiteList();
 		for(TestSuite ts : testSuites){
