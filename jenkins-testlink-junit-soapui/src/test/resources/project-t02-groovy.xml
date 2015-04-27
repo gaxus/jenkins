@@ -5882,7 +5882,7 @@ declare namespace soapenv='http://schemas.xmlsoap.org/soap/envelope/';
 
 try{
 	JunitRunner j = new JunitRunner()
-	j.runJunitString((String)context.expand('${redirectURL}'),"FIREFOX","D:/POC/scenarios/")
+	j.runJunitString((String)context.expand('${redirectURL}'),"CHROME","D:/POC/scenarios/")
 } catch(Exception e){
 	log.info(e.message)
 }
