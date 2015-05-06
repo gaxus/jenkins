@@ -1,9 +1,14 @@
 package com.payline.test;
 
 import java.net.ProxySelector;
+import java.util.ArrayList;
 import java.util.List;
 
+import com.eviware.soapui.config.impl.TestCaseConfigImpl;
+import com.eviware.soapui.impl.WorkspaceImpl;
 import com.eviware.soapui.impl.wsdl.WsdlProject;
+import com.eviware.soapui.impl.wsdl.WsdlTestSuite;
+import com.eviware.soapui.impl.wsdl.testcase.WsdlTestCase;
 import com.eviware.soapui.model.support.PropertiesMap;
 import com.eviware.soapui.model.testsuite.TestCase;
 import com.eviware.soapui.model.testsuite.TestRunner;
@@ -30,7 +35,8 @@ public class SoapuiJunitTest {
 	public void testRunner() throws Exception 
 	{
 		ProxySelector proxy = ProxySelector.getDefault(); // On récupère le proxy courant.
-		WsdlProject project = new WsdlProject("file:///"+System.getProperty("user.dir")+"/src/test/resources/project-t02-groovy.xml");
+		//	WsdlProject project = new WsdlProject("file:///"+System.getProperty("user.dir")+"/src/test/resources/project.xml");
+		WsdlProject project = new WsdlProject("file:///"+System.getProperty("user.dir")+"/src/test/resources/groovy2.xml");
 		ProxySelector.setDefault(proxy); //On set le proxy précédemment enregistré car l'instanciation d'un WsdlProject efface le proxy, et cause des problèmes avec FirefoxWebdriver. 
 		List<TestSuite> testSuites = project.getTestSuiteList();
 		for(TestSuite ts : testSuites){
@@ -40,5 +46,23 @@ public class SoapuiJunitTest {
 				Assert.assertEquals(Status.FINISHED, runner.getStatus());
 			}
 		}
+
+		//===========================================================
+
+
+		//Pour récupérer les WsdlTestSuite et WsdlTestCase de façon à les setDisable(true) ou setDisable(false)
+		//		List<WsdlTestSuite> testsuites = new ArrayList<WsdlTestSuite>();
+		//		int countTS = project.getTestSuiteCount();
+		//		for(int i=0; i < countTS; i++){
+		//			testsuites.add(project.getTestSuiteAt(i));
+		//		}
+		//		
+		//		for(WsdlTestSuite testsuite : testsuites){
+		//			List<WsdlTestCase> testcases = new ArrayList<WsdlTestCase>();
+		//			int countTC = testsuite.getTestCaseCount();
+		//			for(int i=0; i < countTC; i++){
+		//				testcases.add(testsuite.getTestCaseAt(i));
+		//			}
+		//		}
 	}
 }
