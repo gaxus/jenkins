@@ -31,8 +31,19 @@ public class SoapuiJunitTest {
 	{
 		ProxySelector proxy = ProxySelector.getDefault(); // On récupère le proxy courant.
 		//	WsdlProject project = new WsdlProject("file:///"+System.getProperty("user.dir")+"/src/test/resources/project.xml");
-		WsdlProject project = new WsdlProject("file:///"+System.getProperty("user.dir")+"/src/test/resources/groovy2.xml");
-		ProxySelector.setDefault(proxy); //On set le proxy précédemment enregistré car l'instanciation d'un WsdlProject efface le proxy, et cause des problèmes avec FirefoxWebdriver. 
+		//WsdlProject project = new WsdlProject("file:///"+System.getProperty("user.dir")+"/src/test/resources/groovy2.xml");
+		
+		
+		WsdlProject project = new WsdlProject("file:///"+System.getProperty("user.dir")+"/src/test/resources/centralized-endpoint-project.xml");
+
+		//ENDPOINT
+		//project.setPropertyValue("ServiceEndpoint", "ws.dev.payline.aixlan.local:9364");
+		System.out.println("Endpoint: "+System.getProperty("ServiceEndpoint"));
+		project.setPropertyValue("ServiceEndpoint",System.getProperty("ServiceEndpoint"));
+		project.setPropertyValue("Navigateur", System.getProperty("Navigateur"));
+		
+		
+		ProxySelector.setDefault(proxy); //On set le proxy précédemment enregistré car l'instanciation d'un WsdlProject efface le proxy, et cause des problèmes avec FirefoxWebdriver.
 		List<TestSuite> testSuites = project.getTestSuiteList();
 		for(TestSuite ts : testSuites){
 			List<TestCase> testCases = ts.getTestCaseList();
