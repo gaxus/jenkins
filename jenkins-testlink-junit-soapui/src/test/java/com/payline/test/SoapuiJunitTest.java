@@ -34,7 +34,7 @@ public class SoapuiJunitTest {
 		//WsdlProject project = new WsdlProject("file:///"+System.getProperty("user.dir")+"/src/test/resources/groovy2.xml");
 		
 		
-		WsdlProject project = new WsdlProject("file:///"+System.getProperty("user.dir")+"/src/test/resources/CentralizedEndpoint.xml");
+		WsdlProject project = new WsdlProject("file:///"+System.getProperty("user.dir")+"/src/test/resources/project.xml");
 
 		//ENDPOINT
 		//project.setPropertyValue("ServiceEndpoint", "ws.dev.payline.aixlan.local:9364");
