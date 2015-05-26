@@ -38,9 +38,17 @@ public class SoapuiJunitTest {
 
 		//ENDPOINT
 		//project.setPropertyValue("ServiceEndpoint", "ws.dev.payline.aixlan.local:9364");
-		System.out.println("Endpoint: "+System.getProperty("ServiceEndpoint"));
-		project.setPropertyValue("ServiceEndpoint",System.getProperty("ServiceEndpoint"));
-		project.setPropertyValue("Navigateur", System.getProperty("Navigateur"));
+		if(System.getProperty("ServiceEndpoint") != null){
+			System.out.println("Endpoint: "+System.getProperty("ServiceEndpoint"));
+			project.setPropertyValue("ServiceEndpoint",System.getProperty("ServiceEndpoint"));
+		} else {
+			project.setPropertyValue("ServiceEndpoint", "ws.dev.payline.aixlan.local:9364");
+		}
+		if(System.getProperty("Navigateur") != null){
+			project.setPropertyValue("Navigateur", System.getProperty("Navigateur"));
+		} else {
+			project.setPropertyValue("Navigateur", "FIREFOX");
+		}
 		
 		
 		ProxySelector.setDefault(proxy); //On set le proxy précédemment enregistré car l'instanciation d'un WsdlProject efface le proxy, et cause des problèmes avec FirefoxWebdriver.
