@@ -13,6 +13,7 @@ import org.junit.runners.model.FrameworkMethod;
 import static org.junit.Assert.*;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.Augmenter;
 
@@ -49,9 +50,9 @@ public class Junit_webdriver_paylineTest {
 	public static void setUp() throws Exception {
 		System.setProperty("webdriver.ie.driver", "d:/POC/webdrivers/IEDriverServer.exe");
 		System.setProperty("webdriver.chrome.driver", "d:/POC/webdrivers/chromedriver.exe");
-		//driver = new FirefoxDriver();
+		driver = new FirefoxDriver();
 		//driver = new ChromeDriver();
-		driver = new InternetExplorerDriver();
+		//driver = new InternetExplorerDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		webdriver = new Augmenter().augment(driver);
 		baseUrl = "http://www.payline.com/index.php/fr/";
